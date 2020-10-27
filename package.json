@@ -1,0 +1,25 @@
+{
+  "name": "ficusjs-docs",
+  "version": "1.0.0",
+  "description": "Documentation for FicusJS",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production eleventy --input=src --output=dist",
+    "dev": "cross-env NODE_ENV=development eleventy --input=src --output=dist --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ficusjs/ficusjs-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ficusjs/ficusjs-docs/issues"
+  },
+  "homepage": "https://github.com/ficusjs/ficusjs-docs#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "cross-env": "7.0.2"
+  }
+}
