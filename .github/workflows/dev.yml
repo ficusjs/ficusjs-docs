@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g surge
-      - run: npm install
+      - run: npm install --force
       - run: npm run build
       - run: surge ./dist ficusjs-docs.surge.sh --token ${{ secrets.SURGE_TOKEN }}
