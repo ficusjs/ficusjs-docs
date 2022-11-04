@@ -32,7 +32,16 @@ import test from 'ava'
 import { init, render } from '@ficusjs/testing'
 
 test.before(init)
+
+// if passing options to JSDOM
+test.before(() => init({ runScripts: 'dangerously' }))
 ```
+
+The `init` function accepts the following optional arguments:
+
+| Name       | Type     | Description                           |
+|------------|----------|---------------------------------------|
+| `options`  | `object` | An object of options to pass to JSDOM |
 
 ### render function
 
