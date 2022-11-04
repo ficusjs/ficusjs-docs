@@ -9,6 +9,7 @@
     "postbuild": "mkdirp dist/assets/js && run-s build:* copy:* workbox:gen",
     "clean": "rimraf dist",
     "copy:assets": "mkdirp dist/assets/img && ncp src/assets/img dist/assets/img",
+    "copy:cname": "ncp CNAME.txt dist/CNAME",
     "copy:favicon": "ncp src/assets/img/favicon.ico dist/favicon.ico",
     "copy:apple-touch-icon": "ncp src/assets/img/apple-touch-icon.png dist/apple-touch-icon.png",
     "copy:manifest": "ncp src/ficus.webmanifest dist/ficus.webmanifest",
