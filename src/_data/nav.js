@@ -1,9 +1,10 @@
 module.exports = {
   'Getting started': [
     { url: '/getting-started/', title: 'Getting started' },
-    { url: '/installation/', title: 'Installation' },
-    { url: '/editor/', title: 'Editor set-up' },
-    { url: '/examples/', title: 'Examples' }
+    { url: '/getting-started/installation/', title: 'Installation' },
+    { url: '/getting-started/editor/', title: 'Editor set-up' },
+    { url: '/getting-started/create-ficus-app/', title: 'Create Ficus App' },
+    { url: '/getting-started/examples/', title: 'Codepen examples' }
   ],
   Usage: [
     { url: '/testing/', title: 'Testing' },

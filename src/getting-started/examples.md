@@ -1,11 +1,7 @@
 ---
 layout: main.njk
-title: FicusJS documentation - Examples
+title: FicusJS documentation - Codepen examples
 ---
-# Examples
-
-Examples of using FicusJS are available.
-
-## Codepen
+# Codepen Examples
 
 You can find a set of FicusJS examples on Codepen at [https://codepen.io/collection/nRvEaw](https://codepen.io/collection/nRvEaw)
