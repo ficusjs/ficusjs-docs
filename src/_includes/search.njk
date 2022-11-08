@@ -10,24 +10,17 @@
 
       {% include "sidebar.njk" %}
 
-      <main class="[ fd-doc-layout-toc ] [ fu-spacing-pl-05 fu-spacing-pr-05 fu-spacing-pt-05 fu-spacing-pb-05 fu-lg-layout-pl-06 fu-lg-layout-pr-06 fu-lg-layout-pt-06 fu-lg-layout-pb-06 fu-flow ]">
+      <main class="[ fu-spacing-pl-05 fu-spacing-pr-05 fu-spacing-pt-05 fu-spacing-pb-05 fu-lg-layout-pl-06 fu-lg-layout-pr-06 fu-lg-layout-pt-06 fu-lg-layout-pb-06 fu-flow ]">
         <article class="[ fd-doc-article ] [ fu-flow ]">
           {{ content | safe }}
         </article>
-        {% if content | toc %}
-        <aside class="[ fd-sticky-aside ]">
-          <div class="[ fd-toc ]">
-            <span>Table of contents</span>
-            {{ content | toc | safe }}
-          </div>
-        </aside>
-        {% endif %}
       </main>
 
       {% include "footer.njk" %}
 
     </div>
     <script type="module" src="/assets/js/main.mjs"></script>
+    <script type="module" src="/assets/js/search.mjs"></script>
     {% serviceWorker %}
   </body>
 </html>

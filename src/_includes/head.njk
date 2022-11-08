@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<meta name="description" content="Lightweight functions for developing applications using web components">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="icon" href="/assets/img/favicon.ico">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/android-chrome-384x384.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="manifest" href="/ficus.webmanifest">
+<meta name="theme-color" content="#54e4e5">
+<!-- component css START -->
+{% set css %}
+{% include "../assets/css/docs.css" %}
+{% include "../assets/css/ficus-globals.css" %}
+{% include "../assets/css/ficus-utilities.css" %}
+{% include "../assets/css/ficus-docs.css" %}
+{% include "../assets/css/dropdown.css" %}
+{% include "../assets/css/navbar.css" %}
+{% include "../assets/css/form.css" %}
+{% include "../assets/css/form-input.css" %}
+{% include "../assets/css/navigation.css" %}
+{% include "../assets/css/button.css" %}
+{% endset %}
+{% if project.environment == "production" %}
+    <style>
+    {{css | cssmin | safe}}
+    </style>
+{% else %}
+    <style>
+    {{css | safe}}
+    </style>
+{% endif %}
+<!-- component css END -->
