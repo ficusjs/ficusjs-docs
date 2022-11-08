@@ -77,7 +77,7 @@ createCustomElement(
         <section>
           ${this.state.search.results.map(r => html`
             <article class="[ fu-spacing-mt-07 ]">
-              <a href="${r.url}"><h3>${r.title}</h3></a>
+              <a href="${`${r.url}?hl=${this.state.search.query}`}"><h3>${r.title}</h3></a>
               <p>${r.excerpt}</p>
             </article>
           `)}

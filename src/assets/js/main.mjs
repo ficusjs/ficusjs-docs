@@ -8,5 +8,6 @@ import './theme.mjs'
 import './adaptive-tables.mjs'
 import './nav-filter.mjs'
 import './save-scroll.mjs'
+import './highlight.mjs'
 use(navbarModule, { renderer, html })
 use(dropdownModule, { renderer, html })
