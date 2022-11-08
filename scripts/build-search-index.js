@@ -9,6 +9,8 @@ const { markdownToTxt } = require('markdown-to-txt')
 const documents = []
 const docs = {}
 const regex = /(```.+?```)/g
+const isProd = process.env.NODE_ENV === 'production'
+const outputDir = isProd ? 'dist' : 'src'
 
 function getExcerpt (str, limit) {
   const fullText = str
@@ -51,5 +53,5 @@ const idx = lunr(function () {
   }, this)
 })
 
-fs.writeFileSync('./src/assets/search-index.json', JSON.stringify(idx))
-fs.writeFileSync('./src/assets/search-docs.json', JSON.stringify(docs))
+fs.writeFileSync(`./${outputDir}/assets/search-index.json`, JSON.stringify(idx))
+fs.writeFileSync(`./${outputDir}/assets/search-docs.json`, JSON.stringify(docs))
