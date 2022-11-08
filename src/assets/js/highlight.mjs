@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const terms = params.get('hl').split(' ')
     terms.forEach(term => {
       const regex = new RegExp(`(${term})`, 'ig')
-      const main = document.querySelector('main')
-      main.innerHTML = main.innerHTML.replace(regex, '<mark>$1</mark>')
+      const elements = Array.from(document.querySelectorAll('main p, main li'))
+      elements.forEach(element => {
+        element.innerHTML = element.innerHTML.replace(regex, '<mark>$1</mark>')
+      })
     })
   }
 })
