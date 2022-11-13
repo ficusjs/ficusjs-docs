@@ -53,9 +53,9 @@ exampleComponentInstance.className = 'another-value'
 
 FicusJS provides built-in props that are available on all components.
 
-| Prop name | Type   | Description                                           |
-|-----------| ------ |-------------------------------------------------------|
-| `key`     | String | An arbitary value often used to re-render a component |
+| Prop name | Type   | Description                                 |
+|-----------| ------ |---------------------------------------------|
+| `key`     | String | A value often used to re-render a component |
 
 ## Prop types
 
