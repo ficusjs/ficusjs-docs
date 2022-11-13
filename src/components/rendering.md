@@ -115,3 +115,28 @@ render () {
   })
 }
 ```
+
+## Force a re-render
+
+There are many cases where you will have a legitimate need to re-render a component.
+
+To do this the proper way, every component has a default `key` prop. If the `key` stays the same, it won't change the component, but if the `key` changes, this triggers a re-render.
+
+The `key` prop can be updated within the component using `this.key = 'new-key'` or by passing a new `key` prop to the component.
+
+```js
+{
+  updateKey (key) {
+    this.key = key
+  },
+  render () {
+    return html`
+      <div></div>
+    `
+  }
+}
+```
+
+```html
+<my-component key="1"></my-component>
+```

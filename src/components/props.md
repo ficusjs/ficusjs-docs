@@ -4,8 +4,11 @@ title: FicusJS documentation - Components - Props
 ---
 # Props
 
-You pass props as HTML attributes on the component and then get access to them inside your component's JavaScript with `this.props`. Props must be defined using camel-case but set as kebab-case in HTML.
-Props will be observed by default which means they react to changes.
+You pass props as HTML attributes on the component and then get access to them inside your component's JavaScript with `this.props`. 
+
+Props must be defined using camel-case but set as kebab-case in HTML. Values are converted between Javascript types and HTML attributes.
+
+Props are observed by default which means they react to changes and trigger re-renders.
 
 ```html
 <example-component class-name="a-class" required="true"></example-component>
@@ -28,7 +31,7 @@ props: {
 }
 ```
 
-The following properties can be used to define props:
+The following properties are used to define props:
 
 | Property   | Required | Value                                                                          |
 | ---------- | -------- | ------------------------------------------------------------------------------ |
@@ -44,4 +47,78 @@ Prop values can be set on instances of components. Each prop you define for a co
 ```js
 const exampleComponentInstance = document.querySelector('example-component')
 exampleComponentInstance.className = 'another-value'
+```
+
+## Built-in props
+
+FicusJS provides built-in props that are available on all components.
+
+| Prop name | Type   | Description                                           |
+|-----------| ------ |-------------------------------------------------------|
+| `key`     | String | An arbitary value often used to re-render a component |
+
+## Prop types
+
+There are a number of prop types available for use in components. These are defined in the `type` property of the prop definition.
+
+### String
+
+```js
+props: {
+  className: {
+    type: String
+  }
+}
+```
+
+### Number
+
+```js
+props: {
+  count: {
+    type: Number
+  }
+}
+```
+
+### Boolean
+
+```js
+props: {
+  required: {
+    type: Boolean
+  }
+}
+```
+
+### Object
+
+```js
+props: {
+  options: {
+    type: Object
+  }
+}
+```
+
+### Array
+
+```js
+props: {
+  items: {
+    type: Array
+  }
+}
+```
+
+### Function
+
+Functions can be passed as props. These cannot be passed using HTML attributes as they cannot be converted from strings. Functions can only be passed using instance properties.
+
+```js
+props: {
+  onClick: {
+    type: Function
+  }
+}
 ```
