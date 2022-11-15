@@ -7,7 +7,7 @@ title: FicusJS documentation - Finite state machines and statecharts - createMac
 The `createMachine` function is used to define a state machine.
 
 ```js
-import { createMachine } from 'https://cdn.skypack.dev/ficusjs@5/xstate-service'
+import { createMachine } from 'https://cdn.skypack.dev/ficusjs@6/xstate-service'
 
 const machine = createMachine({
   id: 'toggle',

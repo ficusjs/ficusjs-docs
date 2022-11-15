@@ -18,7 +18,7 @@ The `wrapXStateService` function takes three arguments:
 import { createMachine, interpret } from 'https://cdn.skypack.dev/xstate'
 
 // import the required function
-import { wrapXStateService } from 'https://cdn.skypack.dev/ficusjs@5/xstate-service'
+import { wrapXStateService } from 'https://cdn.skypack.dev/ficusjs@6/xstate-service'
 
 const definition = {
   /* define the machine definition */
@@ -78,7 +78,7 @@ const service = wrapXStateService(serviceInstance, getters, 'food')
 You can optionally save state to `window.localStorage` (for persistence across browser sessions) using the `createPersist` function:
 
 ```js
-import { createPersist } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createPersist } from 'https://cdn.skypack.dev/ficusjs@6'
 
 const service = wrapXStateService(serviceInstance, getters, createPersist('food', 'local'))
 ```
@@ -96,7 +96,7 @@ When using the `createPersist` function, the following arguments must be supplie
 Options can be provided when creating persistence.
 
 ```js
-import { createPersist } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createPersist } from 'https://cdn.skypack.dev/ficusjs@6'
 
 const service = wrapXStateService(serviceInstance, getters, createPersist('food', 'local', {
   clearOnReload: true,

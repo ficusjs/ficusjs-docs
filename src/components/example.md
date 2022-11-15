@@ -10,10 +10,10 @@ Import the `createCustomElement` function together with a renderer function and 
 
 ```js
 // import the createCustomElement function
-import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@5/custom-element'
+import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@6/custom-element'
 
 // import the withLocalState function for internal reactive state
-import { withLocalState } from 'https://cdn.skypack.dev/ficusjs@5/with-local-state'
+import { withLocalState } from 'https://cdn.skypack.dev/ficusjs@6/with-local-state'
 
 // import the renderer and html tagged template literal from the uhtml renderer
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uhtml'

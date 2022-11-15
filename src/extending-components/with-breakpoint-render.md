@@ -14,10 +14,10 @@ Optionally, breakpoints can be reactive which means the component will re-render
 
 ```js
 // import it with all other features
-import { createCustomElement, withBreakpointRender } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createCustomElement, withBreakpointRender } from 'https://cdn.skypack.dev/ficusjs@6'
 
 // alternatively, import the function directly
-// import { withBreakpointRender } from 'https://cdn.skypack.dev/ficusjs@5/with-breakpoint-render'
+// import { withBreakpointRender } from 'https://cdn.skypack.dev/ficusjs@6/with-breakpoint-render'
 
 // import the renderer and html tagged template literal from the uhtml renderer
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uhtml'

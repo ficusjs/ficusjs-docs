@@ -14,7 +14,7 @@ You can use a standard root, a closed Shadow DOM root or an open Shadow DOM root
 
 ```js
 // import the createCustomElement function
-import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@5/custom-element'
+import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@6/custom-element'
 
 // import the renderer and html tagged template literal from the htm renderer
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/htm'

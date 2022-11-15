@@ -7,7 +7,7 @@ title: FicusJS documentation - Event bus - Example
 Import the `createEventBus` function into your Javascript main file:
 
 ```js
-import { createEventBus } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createEventBus } from 'https://cdn.skypack.dev/ficusjs@6'
 ```
 
 Create a new event bus instance:

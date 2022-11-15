@@ -7,7 +7,7 @@ title: FicusJS documentation - I18n - Example
 Import the `createI18n` function into your Javascript main file:
 
 ```js
-import { createI18n } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createI18n } from 'https://cdn.skypack.dev/ficusjs@6'
 ```
 
 Create a new `I18n` instance:

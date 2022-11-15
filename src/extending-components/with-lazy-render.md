@@ -14,10 +14,10 @@ When the component becomes visible, it triggers a render which then calls the co
 
 ```js
 // import it with all other features
-import { createCustomElement, withLazyRender } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createCustomElement, withLazyRender } from 'https://cdn.skypack.dev/ficusjs@6'
 
 // alternatively, import the function directly
-// import { withLazyRender } from 'https://cdn.skypack.dev/ficusjs@5/with-lazy-render'
+// import { withLazyRender } from 'https://cdn.skypack.dev/ficusjs@6/with-lazy-render'
 
 // import the renderer and html tagged template literal from the uhtml renderer
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uhtml'

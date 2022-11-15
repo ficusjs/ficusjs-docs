@@ -8,10 +8,10 @@ Working with multiple component extensions can be made easier by using the `Exte
 
 ```js
 // import it with all other features
-import { createCustomElement, ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createCustomElement, ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@6'
 
 // Alternatively, import the ExtensionBuilder function
-// import { ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@5/extension-builder'
+// import { ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@6/extension-builder'
 
 // import the renderer and html tagged template literal from the uhtml renderer
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uhtml'
@@ -93,6 +93,18 @@ const builder = ExtensionBuilder
   .withI18n(i18n)
 ```
 
+### withI18nReactive(i18n)
+
+Use the [`withI18nReactive`](/extending-components/with-i18n-reactive/) extension function.
+
+```js
+import { i18n } from './i18n.mjs'
+
+const builder = ExtensionBuilder
+  .newInstance()
+  .withI18nReactive(i18n)
+```
+
 ### withLazyRender()
 
 Use the [`withLazyRender`](/extending-components/with-lazy-render/) extension function.
@@ -152,7 +164,7 @@ const builder = ExtensionBuilder
 Use the [`withXStateService`](/state-machines/with-xstate-service/) extension function.
 
 ```js
-import { getXStateService } from 'https://cdn.skypack.dev/ficusjs@5/xstate-service'
+import { getXStateService } from 'https://cdn.skypack.dev/ficusjs@6/xstate-service'
 
 const service = getXStateService('toggle.service')
 

@@ -19,7 +19,7 @@ Import the `createStore` function into your Javascript main file:
 **main.js**
 
 ```js
-import { createStore } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createStore } from 'https://cdn.skypack.dev/ficusjs@6'
 ```
 
 Create a new store instance with `actions`, `mutations` and `initialState`:
@@ -76,7 +76,7 @@ The `getStore` function is a quick way to retrieve a store.
 
 ```js
 // import the function
-import { getStore } from 'https://cdn.skypack.dev/ficusjs@5'
+import { getStore } from 'https://cdn.skypack.dev/ficusjs@6'
 
 // retrieve a store instance
 const storeInstance = getStore('my.another.store')
@@ -484,7 +484,7 @@ Subscription to store changes will be handled automatically within the component
 See [extending components](/docs/composition) for more on the `withStore` function.
 
 ```js
-import { createCustomElement, withStore } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createCustomElement, withStore } from 'https://cdn.skypack.dev/ficusjs@6'
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/lit-html'
 
 // An initialised store. Params omitted for brevity

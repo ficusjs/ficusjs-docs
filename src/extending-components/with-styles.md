@@ -9,10 +9,10 @@ by providing a `styles` function which is invoked injecting CSS into the `<head>
 
 ```js
 // import it with all other features
-import { createCustomElement, withStyles } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createCustomElement, withStyles } from 'https://cdn.skypack.dev/ficusjs@6'
 
 // alternatively, import the function directly
-// import { withStyles } from 'https://cdn.skypack.dev/ficusjs@5/with-styles'
+// import { withStyles } from 'https://cdn.skypack.dev/ficusjs@6/with-styles'
 
 // import the renderer and html tagged template literal from the uhtml renderer
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uhtml'

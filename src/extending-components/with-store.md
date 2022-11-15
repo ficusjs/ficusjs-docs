@@ -8,10 +8,10 @@ The `withStore` function extends a component and makes working with stores easie
 
 ```js
 // import it with all other features
-import { createCustomElement, withStore } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createCustomElement, withStore } from 'https://cdn.skypack.dev/ficusjs@6'
 
 // alternatively, import the function directly
-// import { withStore } from 'https://cdn.skypack.dev/ficusjs@5/with-store'
+// import { withStore } from 'https://cdn.skypack.dev/ficusjs@6/with-store'
 
 // import the renderer and html tagged template literal from the uhtml renderer
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uhtml'

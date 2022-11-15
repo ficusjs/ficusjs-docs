@@ -12,7 +12,7 @@ We recommend using native ES modules in the browser.
 
 ```html
 <script type="module">
-  import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@5/custom-element'
+  import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@6/custom-element'
 </script>
 ```
 
@@ -82,69 +82,69 @@ import {
 
   // modules
   use
-} from 'https://cdn.skypack.dev/ficusjs@5'
+} from 'https://cdn.skypack.dev/ficusjs@6'
 ```
 
 ### Custom elements
 
 ```js
-import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@5/custom-element'
+import { createCustomElement } from 'https://cdn.skypack.dev/ficusjs@6/custom-element'
 ```
 
 ### Components
 
 ```js
-import { createComponent } from 'https://cdn.skypack.dev/ficusjs@5/component'
+import { createComponent } from 'https://cdn.skypack.dev/ficusjs@6/component'
 ```
 
 ### Extending components
 
 ```js
-import { ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@5/extension-builder'
-import { withBreakpointRender } from 'https://cdn.skypack.dev/ficusjs@5/with-breakpoint-render'
-import { withEventBus } from 'https://cdn.skypack.dev/ficusjs@5/with-event-bus'
-import { withI18n } from 'https://cdn.skypack.dev/ficusjs@5/with-i18n'
-import { withLazyRender } from 'https://cdn.skypack.dev/ficusjs@5/with-lazy-render'
-import { withLocalState } from 'https://cdn.skypack.dev/ficusjs@5/with-local-state'
-import { withStateMachine } from 'https://cdn.skypack.dev/ficusjs@5/with-state-machine'
-import { withStore } from 'https://cdn.skypack.dev/ficusjs@5/with-store'
-import { withStyles } from 'https://cdn.skypack.dev/ficusjs@5/with-styles'
-import { withWorkerStore } from 'https://cdn.skypack.dev/ficusjs@5/with-worker-store'
-import { withXStateService } from 'https://cdn.skypack.dev/ficusjs@5/with-xstate-service'
+import { ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@6/extension-builder'
+import { withBreakpointRender } from 'https://cdn.skypack.dev/ficusjs@6/with-breakpoint-render'
+import { withEventBus } from 'https://cdn.skypack.dev/ficusjs@6/with-event-bus'
+import { withI18n } from 'https://cdn.skypack.dev/ficusjs@6/with-i18n'
+import { withLazyRender } from 'https://cdn.skypack.dev/ficusjs@6/with-lazy-render'
+import { withLocalState } from 'https://cdn.skypack.dev/ficusjs@6/with-local-state'
+import { withStateMachine } from 'https://cdn.skypack.dev/ficusjs@6/with-state-machine'
+import { withStore } from 'https://cdn.skypack.dev/ficusjs@6/with-store'
+import { withStyles } from 'https://cdn.skypack.dev/ficusjs@6/with-styles'
+import { withWorkerStore } from 'https://cdn.skypack.dev/ficusjs@6/with-worker-store'
+import { withXStateService } from 'https://cdn.skypack.dev/ficusjs@6/with-xstate-service'
 ```
 
 ### Extending components <span class="fd-deprecated" style="font-size: 1rem">DEPRECATED</span>
 
 ```js
-import { withStateTransactions } from 'https://cdn.skypack.dev/ficusjs@5/with-state-transactions'
+import { withStateTransactions } from 'https://cdn.skypack.dev/ficusjs@6/with-state-transactions'
 ```
 
 ### Event bus
 
 ```js
-import { createEventBus, getEventBus } from 'https://cdn.skypack.dev/ficusjs@5/event-bus'
+import { createEventBus, getEventBus } from 'https://cdn.skypack.dev/ficusjs@6/event-bus'
 ```
 
 ### Application state
 
 ```js
-import { createAppState, getAppState, createPersist } from 'https://cdn.skypack.dev/ficusjs@5/app-state'
+import { createAppState, getAppState, createPersist } from 'https://cdn.skypack.dev/ficusjs@6/app-state'
 ```
 
 ### Stores <span class="fd-deprecated" style="font-size: 1rem">DEPRECATED</span>
 
 ```js
-import { createStore, getStore } from 'https://cdn.skypack.dev/ficusjs@5/store'
+import { createStore, getStore } from 'https://cdn.skypack.dev/ficusjs@6/store'
 ```
 
 ### Internationalization (i18n)
 
 ```js
-import { createI18n, getI18n } from 'https://cdn.skypack.dev/ficusjs@5/i18n'
+import { createI18n, getI18n } from 'https://cdn.skypack.dev/ficusjs@6/i18n'
 ```
 
 ### Finite state machines and statecharts
 
 ```js
-import { assign, createMachine, createXStateService, getXStateService, interpret, wrapXStateService } from 'https://cdn.skypack.dev/ficusjs@5/xstate-service'
+import { assign, createMachine, createXStateService, getXStateService, interpret, wrapXStateService } from 'https://cdn.skypack.dev/ficusjs@6/xstate-service'
 ```

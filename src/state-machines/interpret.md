@@ -13,7 +13,7 @@ The `interpret` function takes three arguments:
 3. a persistence string, object or custom class (optional)
 
 ```js
-import { createMachine, interpret } from 'https://cdn.skypack.dev/ficusjs@5/xstate-service'
+import { createMachine, interpret } from 'https://cdn.skypack.dev/ficusjs@6/xstate-service'
 
 const definition = {
   /* define the machine definition */
@@ -72,7 +72,7 @@ const service = interpret(machine, getters, 'food')
 You can optionally save state to `window.localStorage` (for persistence across browser sessions) using the `createPersist` function:
 
 ```js
-import { createPersist } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createPersist } from 'https://cdn.skypack.dev/ficusjs@6'
 
 const service = interpret(machine, getters, createPersist('food', 'local'))
 ```
@@ -90,7 +90,7 @@ When using the `createPersist` function, the following arguments must be supplie
 Options can be provided when creating persistence.
 
 ```js
-import { createPersist } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createPersist } from 'https://cdn.skypack.dev/ficusjs@6'
 
 const service = interpret(machine, getters, createPersist('food', 'local', {
   clearOnReload: true,

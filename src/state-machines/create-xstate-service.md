@@ -16,7 +16,7 @@ The `createXStateService` function takes four arguments:
 4. a persistence string, object or custom class (optional)
 
 ```js
-import { createMachine, createXStateService } from 'https://cdn.skypack.dev/ficusjs@5/xstate-service'
+import { createMachine, createXStateService } from 'https://cdn.skypack.dev/ficusjs@6/xstate-service'
 
 const definition = {
   /* define the machine definition */
@@ -73,7 +73,7 @@ const service = createXStateService('toggle.service', machine, getters, 'food')
 You can optionally save state to `window.localStorage` (for persistence across browser sessions) using the `createPersist` function:
 
 ```js
-import { createPersist } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createPersist } from 'https://cdn.skypack.dev/ficusjs@6'
 
 const service = createXStateService('toggle.service', machine, getters, createPersist('food', 'local'))
 ```
@@ -91,7 +91,7 @@ When using the `createPersist` function, the following arguments must be supplie
 Options can be provided when creating persistence.
 
 ```js
-import { createPersist } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createPersist } from 'https://cdn.skypack.dev/ficusjs@6'
 
 const service = createXStateService('toggle.service', machine, getters, createPersist('food', 'local', {
   clearOnReload: true,

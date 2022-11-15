@@ -13,7 +13,7 @@ will be handled automatically when the component fires the `removed` or `updated
 See [extending components](/composition) for more on the `withEventBus` function.
 
 ```js
-import { createCustomElement, createEventBus, withEventBus } from 'https://cdn.skypack.dev/ficusjs@5'
+import { createCustomElement, createEventBus, withEventBus } from 'https://cdn.skypack.dev/ficusjs@6'
 import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uhtml'
 
 const eventBus = createEventBus()
