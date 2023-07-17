@@ -7,15 +7,20 @@ title: FicusJS documentation - Internationalization (i18n) and localization
 FicusJS provides functions for internationalization (i18n) and localization in components.
 
 ```js
+import { createI18n } from 'https://cdn.skypack.dev/ficusjs@6'
+
+// create the i18n instance and add the messages
+const i18n = createI18n()
+
 i18n.add({
     projectTitle: 'Project title',
     button: {
-        text: 'Click me $userName!',
+        text: 'Click me \{{userName}}!',
         caption: 'Please click me!'
     },
     itemsCaption: [
-        '$count item',
-        '$count items'
+        '\{{count}} item',
+        '\{{count}} items'
     ],
     deep: {
         nested: {
@@ -24,7 +29,7 @@ i18n.add({
     }
 })
 
-// get translations
+// use the translations
 i18n.t('projectTitle') // outputs  "Project title"
 i18n.t('button.text', { userName: 'George' }) // outputs  "Click me George!"
 i18n.t('button.caption') // outputs  "Please click me!"

@@ -38,11 +38,25 @@ Message interpolation uses double handlebars <code>{\{ value }}</code>.
 
 The following arguments can be passed to the `add()` method.
 
-| Argument | Type | Required | Description                                                                                                                                                                              |
+| Argument | Type | Required | Description |
 | --- | --- | --- | --- |
 | `items` | `object` | Yes | The object containing messages |
 | `locale` | `string` | | An optional locale for the messages. For example `es`. The default is `en` |
 | `prefix` | `string` | | An optional prefix for the messages |
+
+Pluralization is set by adding an array of messages to the `items` object.
+
+```js
+i18n.add({
+  greeting: 'Hello FicusJS'
+  itemsCaption: [
+    '1 item',
+    '0 or more items'
+  ]
+})
+```
+
+Interpolation is also supported in pluralization messages.
 
 ### t(key, templateData, options)
 
@@ -53,7 +67,25 @@ If `templateData` is present, messages are interpolated with `templateData`.
 
 A specific locale translation can be specified via `options.locale`.
 
-Pluralization is done in reference to `count` template data value when an array is passed to the `t()` function (override with `options.pluralizeTo`).
+#### Pluralization
+
+Pluralization is calculated by examining the `count` property passed in the `templateData` object.
+
+```js
+i18n.t('itemsCaption', { count: 0 }) // outputs  "0 or more items"
+i18n.t('itemsCaption', { count: 1 }) // outputs  "1 item"
+i18n.t('itemsCaption', { count: 2 }) // outputs  "0 or more items"
+```
+
+The `count` property can be changed in the `options` object by specifying `pluralizeTo`.
+
+```js
+i18n.t('itemsCaption', { num: 0 }, { pluralizeTo: 'num' }) // outputs  "0 items"
+i18n.t('itemsCaption', { num: 1 }, { pluralizeTo: 'num' }) // outputs  "1 item"
+i18n.t('itemsCaption', { num: 2 }, { pluralizeTo: 'num' }) // outputs  "2 items"
+```
+
+#### Arguments
 
 The following arguments can be passed to the `t()` method.
 
@@ -63,18 +95,15 @@ The following arguments can be passed to the `t()` method.
 | `templateData` | `object` | | The optional data for message interpolation. The keys must match the message value. For example; the message <code>Greeting {\{ name }}</code> requires a `templateData` object containing `{ name: 'FicusJS' }` |
 | `options` | `object` | | An optional set of options for the message translation |
 
+The following options can be passed to the `options` object.
+
+| Option | Type | Required | Description |
+| --- | --- | --- | --- |
+| `locale` | `string` | | An optional locale for the messages. For example `es`. The default is `en` |
+| `pluralizeTo` | `string` | | An optional property name to use for pluralization. The default is `count` |
+
 ```js
-i18n.add({
-  navbar: {
-    buttons: {
-      home: "Home"
-    }
-  }
-})
-
-const value = i18n.t('navbar.buttons.home')
-
-// value is 'Home'
+i18n.t('greeting', { name: 'FicusJS' }, { locale: 'es' })
 ```
 
 ### setLocale(locale)

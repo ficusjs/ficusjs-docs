@@ -15,14 +15,53 @@ import { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers@5/uht
 // create the i18n instance
 const i18n = createI18n()
 
+// change interpolation delimiters
+i18n.interpolateWith(/\$(\w+)/g)
+
+// populate the messages
+i18n.add({
+    projectTitle: 'Project title',
+    button: {
+        text: 'Click me $userName!',
+        caption: 'Please click me!'
+    },
+    itemsCaption: [
+        '$count item',
+        '$count items'
+    ],
+    deep: {
+        nested: {
+            label: 'Deep nested label'
+        }
+    }
+})
+
 // Use the i18n instance in a new component
 createCustomElement(
-  'my-component',
+  'i18n-messages',
   withI18n(i18n, {
     renderer,
     render () {
-      /* handle render here */
+      return html`
+        <h1>i18n messages</h1>
+        <dl>
+          <dt>Title</dt>
+          <dd>${this.i18n.t('projectTitle')}</dd>
+          <dt>Button text</dt>
+          <dd>${this.i18n.t('button.text', { userName: 'George' })}</dd>
+          <dt>Button caption</dt>
+          <dd>${this.i18n.t('button.caption')}</dd>
+          <dt>Items caption</dt>
+          <dd>${this.i18n.t('itemsCaption', { count: 0 })}</dd>
+          <dd>${this.i18n.t('itemsCaption', { count: 1 })}</dd>
+          <dd>${this.i18n.t('itemsCaption', { count: 2 })}</dd>
+          <dt>Deep nested label</dt>
+          <dd>${this.i18n.t('deep.nested.label')}</dd>
+        </dl>
+      `
     }
   })
 )
 ```
+
+Alternatively, fork this Codepen to see it in action - [https://codepen.io/ducksoupdev/pen/gOQeERm](https://codepen.io/ducksoupdev/pen/gOQeERm)
