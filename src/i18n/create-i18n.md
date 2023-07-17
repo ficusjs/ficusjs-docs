@@ -40,9 +40,9 @@ The following arguments can be passed to the `add()` method.
 
 | Argument | Type | Required | Description                                                                                                                                                                              |
 | --- | --- | --- | --- |
-| `items` | `object` | Yes | The object containing messages |
+| `items` | `object` | Yes | The object containing messages. The value of each message can be a simple string or, in the case of pluralized messages, an array of strings. |
 | `locale` | `string` | | An optional locale for the messages. For example `es`. The default is `en` |
-| `prefix` | `string` | | An optional prefix for the messages |
+| `prefix` | `string` | | An optional prefix for the messages. It will be automatically prepended to each item's key. |
 
 ### t(key, templateData, options)
 
@@ -125,6 +125,12 @@ const value = i18n.t('welcomeMessage', { userName: 'George' })
 ### setPluralizationRule(locale, rule, options)
 
 The `setPluralizationRule()` method sets a locale-specific pluralization rule function to determine plural form variation index.
+
+| Argument | Type | Required | Description |
+| --- | --- | --- | --- |
+| `locale` | `string` | Yes | The locale that the `rule` function is defined for |
+| `rule` | `function` | Yes | A locale-specific function that receive a count as parameter and returns an index into the array of pluralized translated messages |
+| `options` | `object` | | An optional set of locale-specific options for the pluralization rule |
 
 ```js
 i18n.setPluralizationRule('en', function (count) {
