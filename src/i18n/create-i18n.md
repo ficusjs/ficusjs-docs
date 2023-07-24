@@ -16,9 +16,9 @@ import { createI18n } from 'https://cdn.skypack.dev/ficusjs@6'
 const i18n = createI18n()
 ```
 
-The current locale is set according to the following rules:
+Upon instantiation, the current locale is automatically detected according to the following rules:
 
-1. `lang` query string parameter `?lang=es`
+1. User-defined detection function (defaults to a function that reads the value of the `lang` query-string parameter, e.g. `?lang=es`)
 2. HTML `lang` attribute `<html lang="es">`
 3. `navigator.language` property
 
@@ -89,7 +89,7 @@ i18n.t('itemsCaption', { num: 2 }, { pluralizeTo: 'num' }) // outputs  "2 items"
 
 The following arguments can be passed to the `t()` method.
 
-| Argument | Type | Required | Description                                                                                                                                                                              |
+| Argument | Type | Required | Description |
 | --- | --- | --- | --- |
 | `key` | `string` | Yes | The key for the specific message. This can be a nested key like `navbar.buttons.home` |
 | `templateData` | `object` | | The optional data for message interpolation. The keys must match the message value. For example; the message <code>Greeting {\{ name }}</code> requires a `templateData` object containing `{ name: 'FicusJS' }` |
@@ -108,11 +108,11 @@ i18n.t('greeting', { name: 'FicusJS' }, { locale: 'es' })
 
 ### setLocale(locale)
 
-The `setLocale()` method sets the current locale of the i18n instance.
+The `setLocale()` method sets the current locale of the i18n instance without triggering automatic locale detection.
 
 The following arguments can be passed to the `setLocale()` method.
 
-| Argument | Type | Required | Description                                                                                                                                                                              |
+| Argument | Type | Required | Description |
 | --- | --- | --- | --- |
 | `locale` | `string` | Yes | The locale string. The default is `en` |
 
@@ -129,6 +129,25 @@ const locale = i18n.getLocale()
 
 // locale is 'es'
 ```
+
+## detectLocale(callback)
+
+The `detectLocale()` method triggers the automated locale detection procedure and updates the current locale accordingly. If no detection methods provide a value, the current locale stays unchanged.
+
+| Argument | Type | Required | Description |
+| --- | --- | --- | --- |
+| `callback` | `function` | | A function that is called after locale detection has completed. It is invoked with two arguments: `newLocale` and `oldLocale` |
+
+```js
+import { getEventBus } from 'https://cdn.skypack.dev/ficusjs@6'
+
+// Notify reactive components when the current locale is updated
+i18n.detectLocale((newLocale, oldLocale) => {
+  if (newLocale !== oldLocale) {
+    getEventBus().publish('i18n:locale:changed', newLocale)
+  }
+})
+````
 
 ### interpolateWith(userRE)
 
@@ -151,6 +170,37 @@ const value = i18n.t('welcomeMessage', { userName: 'George' })
 // value is 'Hello George'
 ```
 
+### setLocaleDetectionRule(rule)
+
+the `setLocaleDetectionRule()` method updates the user-defined locale detection rule.
+
+| Argument | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rule` | any | | Either a static value, a promise that resolves to a static value, or a function that returns either a static value or a promise that resolves to a static value |
+
+- If `rule` is a function, it is re-evaluated every time that the locale detection procedure is triggered, and its result is treated according to the following two rules;
+- If `rule` or the result of a `rule` function is a string or a promise that resolves to a string, the current locale is set to that value;
+- If `rule` or the result of a `rule` function is a non-string value or a promise that resolves to a non-string value, the locale detection procedure skips the user-defined detection rule.
+
+```js
+// Disable user-defined locale detection and instead rely on the fallback detection methods
+I18n.setLocaleDetectionRule(null)
+
+// Force user-defined locale detection to 'fr'
+I18n.setLocaleDetectionRule('fr')
+
+// Get locale from subdomain, if present in the URL, relying on the fallback detection methods if undefined
+I18n.setLocaleDetectionRule(() =>
+    new URL(window.location).host.split('.').reverse()[2]
+)
+
+// Asynchronously query a back-end API, relying on the fallback detection methods in case of HTTP error or undefined result
+I18n.setLocaleDetectionRule(() =>
+    fetch('https/example.com/user/123?setting=locale')
+        .then(resp => { if (resp.ok) return resp.text() })
+)
+```
+
 ### setPluralizationRule(locale, rule, options)
 
 The `setPluralizationRule()` method sets a locale-specific pluralization rule function to determine plural form variation index.
@@ -158,7 +208,7 @@ The `setPluralizationRule()` method sets a locale-specific pluralization rule fu
 | Argument | Type | Required | Description |
 | --- | --- | --- | --- |
 | `locale` | `string` | Yes | The locale that the `rule` function is defined for |
-| `rule` | `function` | Yes | A locale-specific function that receive a count as parameter and returns an index into the array of pluralized translated messages |
+| `rule` | `function` | Yes | A locale-specific function that receives a count as parameter and returns an index into the array of pluralized translated messages |
 | `options` | `object` | | An optional set of locale-specific options for the pluralization rule |
 
 ```js

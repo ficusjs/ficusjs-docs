@@ -51,7 +51,7 @@ The following methods are available within the component on `this..i18n`.
 The `t()` method retrieves the translation message for the current locale.
 The following arguments can be passed to the `t()` method.
 
-| Argument | Type | Required | Description                                                                                                                                                                              |
+| Argument | Type | Required | Description |
 | --- | --- | --- | --- |
 | `key` | `string` | Yes | The key for the specific message. This can be a nested key like `buttons.increment` |
 | `templateData` | `object` | | The optional data for message interpolation. The keys must match the message value. For example; the message `Greeting {{ name }}` requires a `templateData` object containing `{ name: 'FicuJS' }` |
@@ -67,9 +67,17 @@ The `setLocale()` method sets the current locale of the i18n instance.
 
 The following arguments can be passed to the `setLocale()` method.
 
-| Argument | Type     | Required | Description                            |
-|----------|----------|----------|----------------------------------------|
-| `locale` | `string` | Yes      | The locale string. The default is `en` |
+| Argument | Type | Required | Description |
+| --- | --- | --- | --- |
+| `locale` | `string` | Yes | The locale string. The default is `en` |
+
+## detectLocale(callback)
+
+The `detectLocale(callback)` method triggers the automated locale detection procedure and updates the current locale accordingly.
+
+| Argument | Type | Required | Description |
+| --- | --- | --- | --- |
+| `callback` | `function` | | A function that is called after locale detection has completed. It is invoked with two arguments: `oldLocale` and `newLocale` |
 
 ## setI18n method
 
